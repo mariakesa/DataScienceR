@@ -20,7 +20,7 @@ primate_sleep<-primates%>%select(sleep_total)%>%unlist%>%mean
 primate_sleep
 primate_sleep_sum <- msleep %>% 
   filter(order == "Primates") %>% 
-  summarize(total_sleep = mean(sleep_total, na.rm = TRUE))
+  summarise(total_sleep = mean(sleep_total, na.rm = TRUE))
 
 primate_sleep_sum
 
