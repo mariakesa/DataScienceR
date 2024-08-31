@@ -54,7 +54,6 @@ mean_sleep_per_order <- msleep %>%
          x = "Average Sleep (hours)",
          y = "Cumulative Distribution") +
     theme(axis.text.x = element_text(angle = 45, hjust = 1))
-}
 
 # Calculate mean sleep for each order and store in a named list
 mean_sleep_per_order <- msleep %>%
@@ -65,3 +64,16 @@ mean_sleep_per_order <- msleep %>%
 # Print the results
 mean_sleep_per_order
 ?setNames
+mean_sleep_per_order <- msleep %>%
+  group_by(order) %>%
+  summarise(mean_sleep = mean(sleep_total, na.rm = TRUE))
+mean_sleep_per_order
+
+ # Sort the data frame by mean_sleep
+  mean_sleep_per_order <- mean_sleep_per_order %>%
+    arrange(mean_sleep)
+mean_sleep_per_order[,2]
+xs<-seq(floor(min(mean_sleep_per_order[,2])),ceiling(max(mean_sleep_per_order[,2])),0.1)
+x<-mean_sleep_per_order[,2]%>%unlist
+ecdf(x)(xs)
+plot(xs,ecdf(x)(xs),type="l",col="blue",main="Empirical CDF of father's height",xlab="Height (inches)",ylab="F(x)")
