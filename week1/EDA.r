@@ -13,3 +13,4 @@ seq(floor(min(x)),ceiling(max(x)),2)
 
 xs<-seq(floor(min(x)),ceiling(max(x)),0.1)
 plot(xs,ecdf(x)(xs),type="l",col="blue",main="Empirical CDF of father's height",xlab="Height (inches)",ylab="F(x)")
+
