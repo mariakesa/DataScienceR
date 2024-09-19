@@ -6,3 +6,4 @@ data <- table(observed,theoretical)
 chi_result <- chisq.test(data)
 print(chi_result)
 #Sture is wrong at rejecting the null hypothesis at this level
+#Chi-Squared Goodness of Fit Test: This test checks whether an observed distribution matches an expected distribution. It's used to determine if a sample comes from a population with a specific distribution.
